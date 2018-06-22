@@ -39,7 +39,7 @@ public class DataSourceConfig {
 		bean.setDataSource(dataSource());
 		Properties prop = new Properties();
 		prop.setProperty("hibernate.dialect", hibernateDialect);
-		bean.setAnnotatedClasses(User.class,User.class);
+		bean.setAnnotatedClasses(User.class);
 		bean.setHibernateProperties(prop);
 		bean.afterPropertiesSet();
 		return bean.getObject();
