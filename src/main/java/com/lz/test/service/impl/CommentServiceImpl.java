@@ -1,8 +1,12 @@
 package com.lz.test.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 
 import com.lz.test.model.Comment;
 
@@ -16,8 +20,8 @@ public class CommentServiceImpl {
 		template.insert(comment);
 	}
 	
-	public Comment getById(Integer id){
-		return template.findById(id, Comment.class);
+	public List<Comment> getAll(){
+		return template.findAll(Comment.class);
 	}
 	
 }
