@@ -2,6 +2,8 @@ package com.lz.test.model;
 
 import javax.persistence.*;
 
+import org.hibernate.validator.constraints.Length;
+
 @Entity
 @Table(name="user")
 public class User {
@@ -9,6 +11,7 @@ public class User {
 	String name;
 	String email;
 	String mobile;
+	@Length(min=6,max=16,message="密码长度在6-16位之间")
 	String password;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
